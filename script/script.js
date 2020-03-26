@@ -3,8 +3,8 @@ income,
 addExpenses,
 deposit,
 mission,
-period
-
-console.log('Поэому здесь будет удивленный смайик (о_о)');
+period;
 
 alert ('Не знаю что написать!');
+
+console.log('Поэтому здесь будет удивленный смайик (о_о)');
