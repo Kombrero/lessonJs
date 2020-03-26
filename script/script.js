@@ -5,6 +5,6 @@ deposit,
 mission,
 period
 
-console.log('Новая запись');
+console.log('Поэому здесь будет удивленный смайик (о_о)');
 
-alert ('Hi!');
+alert ('Не знаю что написать!');
