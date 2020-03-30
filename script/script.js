@@ -16,8 +16,21 @@ budgetDay = Math.ceil(budgetMonth/30);
 
 //alert ('Не знаю что написать!');
 
-//if else
+// Выводы в консоль
+console.log(typeof +money);
+console.log(typeof +income);
+console.log(addExpenses);
+console.log(expenses1);
+console.log(amount1);
+console.log('Бюджет на месяц ' + budgetMonth);
+console.log('Период равен ' + period + ' месяцев');
+console.log('Цель заработать ' + mission + ' рублей' );
+console.log(addExpenses.toLowerCase().split(', '));
+console.log(expenses1.toLowerCase().split(', '));
+console.log(expenses2.toLowerCase().split(', '));
+console.log('Бюджет на день ' + budgetDay);
 
+//if else
 if (deposit == 'Да' || deposit == 'Есть'){
     console.log(true);
 }else{
@@ -33,15 +46,3 @@ if (+budgetDay >= 1200){
 }else{
     console.log('Что-то пошло не так');
 }
-
-// Выводы в консоль
-console.log(typeof +money);
-console.log(typeof +income);
-console.log(addExpenses);
-console.log(expenses1);
-console.log(amount1);
-console.log(budgetMonth);
-console.log('Период равен ' + period + ' месяцев');
-console.log('Цель заработать ' + mission + ' рублей' );
-console.log(addExpenses.toLowerCase().split(', '));
-console.log(budgetDay);
