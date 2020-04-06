@@ -82,14 +82,20 @@ let appData = {
             }else{
                 console.log('Что-то пошло не так');
             }
-    }
-
+        }
 }
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
 appData.getTargetMonth();
 appData.getStatusIncome();
+
+for (let key in appData){
+    console.log('Наша программа включает в себя ' +'Ключ: '+ key +' Значение: ' + appData[key]);
+}
+
+
+
 //console.log(appData);
     
 // Функции
