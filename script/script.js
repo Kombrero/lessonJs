@@ -136,3 +136,28 @@ console.log('appData.budgetMonth: ', appData.budgetMonth);
 for (let key in appData){
     console.log('Наша программа включает в себя ' +'Ключ: '+ key +' Значение: ' + appData[key]);
 }
+
+let button = document.getElementById('start'),
+    incomeAdd = document.getElementsByTagName('button')[0],
+    expensesAdd = document.getElementsByTagName('button')[1],
+    checkBox = document.querySelector('#deposit-check'),
+    incomeItems = document.querySelectorAll('.additional_income-item'),
+    valueBudgetMonth =document.getElementsByClassName('.budget_month-value'),
+    valueBudgetday = document.getElementsByClassName('.budget_day-value'),
+    valueExpensesMonth = document.getElementsByClassName('.expenses_month-value'),
+    valueAdditionalIncome = document.getElementsByClassName('.additional_income-value'),
+    valueAdditionalExpenses = document.getElementsByClassName('.additional_expenses-value'),
+    valueIncomePeriod = document.getElementsByClassName('.income_period-value'),
+    valueTargetMonth = document.getElementsByClassName('.target_month-value'),
+    inpMonthAmount = document.querySelector('.salary-amount'),
+    inpIncomeTitle = document.querySelector('.income-title'),
+    inpIncomeAmount = document.querySelector('.income-amount'),
+    inpAdditionalIncomeTitle = document.querySelector('.additional_income-item'),
+    inpExpensesItem = document.querySelector('.expenses-item'),
+    inpExpensesAmount = document.querySelector('.expenses-amount'),
+    inpAdditionalExpensesItem = document.querySelector('.additional_expenses-item'),
+    inpTargetAmount = document.querySelector('.target-amount'),
+    rangePeriodSelect = document.querySelector('.period-select')
+    
+    
+    console.log(incomeItems, valueAdditionalExpenses, valueAdditionalIncome, valueBudgetMonth, valueBudgetday, valueTargetMonth, valueIncomePeriod, valueExpensesMonth, inpAdditionalExpensesItem, inpAdditionalIncomeTitle, inpIncomeAmount, inpIncomeTitle, inpExpensesAmount, inpExpensesItem, inpTargetAmount, inpMonthAmount);
