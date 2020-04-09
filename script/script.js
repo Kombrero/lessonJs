@@ -115,7 +115,7 @@ let appData = {
                     appData.moneyDeposit = prompt('Какая сумма заложена ?', 10000);
                 }
                 while(!isNumber(appData.percentDeposit) && !isNumber(appData.moneyDeposit))
-            }
+            } 
         },
         calcSavedMoney: function(){
             return appData.budgetMonth * appData.period;
