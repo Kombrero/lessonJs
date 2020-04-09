@@ -180,7 +180,7 @@ let backgroundImg= document.querySelector('body'),
     newChapter = document.createElement('li'),
     newLink = document.createElement('a');
 
-    console.log(book6);
+    console.log(book5);
     
 //Удалил рекламу    
 adv.remove();
@@ -199,6 +199,7 @@ book2[9].after(book2[2]);
 book5[1].after(book5[9]);
 book5[9].after(book5[3]);
 book5[7].after(book5[5]);
+book5[4].after(book5[2]);
 
 //Добавил главу в 6 книгу
 newChapter.textContent = 'Глава 8: За пределами ES6';
