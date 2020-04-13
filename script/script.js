@@ -46,12 +46,13 @@ let appData = {
     mission: 0,
     budgetDay: 0,
     budgetMonth: 0,
+    
     start : function() {
         
         appData.budget = +inpMonthAmount.value;
 
         
-        appData.getVerfication();
+        
         appData.getExpenses();
         appData.getIncome();
         appData.getExpensesMonth();
@@ -204,37 +205,20 @@ let appData = {
 
       getVerfication: function(){
         if (inpMonthAmount.value.trim() === '' || !isNumber(+inpMonthAmount.value)){
-            alert ('of');
             return;
             
         }else{
-            appData.start;
-            alert ('on');
-            
+            appData.start();
         } 
        }
         
 }
-
+appData.getVerfication();
 
 
 // Обработчик событий 
-
-// inpMonthAmount.addEventListener('change', () =>
-//     start.disabled = !start.disabled
-// )
 start.addEventListener('click', appData.getVerfication);
+rangePeriodSelect.addEventListener('change', appData.periodAmount );
 
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
 incomeAdd.addEventListener('click', appData.addIncomeBlock);
-
-
-
-
-
-
-//appData.getTargetMonth();
-// appData.getStatusIncome();
-// appData.getInfoDeposit();
-// appData.calcSavedMoney();
-
