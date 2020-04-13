@@ -218,7 +218,7 @@ appData.getVerfication();
 
 // Обработчик событий 
 start.addEventListener('click', appData.getVerfication);
-rangePeriodSelect.addEventListener('change', appData.periodAmount );
+rangePeriodSelect.addEventListener("change", appData.getPeriodAmount );
 
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
 incomeAdd.addEventListener('click', appData.addIncomeBlock);
