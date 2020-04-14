@@ -74,6 +74,7 @@ let appData = {
         valueAdditionalIncome.value = this.addIncome.join(', ');
         valueTargetMonth.value = Math.ceil(this.getTargetMonth());
         valueIncomePeriod.value = appData.calcSavedMoney();
+        rangePeriodSelect.addEventListener("change", appData.getChangeCalc);
     },
     expensesMonth: [],
     addExpensesBlock: function(){
@@ -227,7 +228,7 @@ let appData = {
 // Обработчик событий 
 start.addEventListener('click', appData.getVerfication.bind(appData));
 rangePeriodSelect.addEventListener("change", appData.getPeriodAmount);
-rangePeriodSelect.addEventListener("change", appData.getChangeCalc);
+
 
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
 incomeAdd.addEventListener('click', appData.addIncomeBlock);
