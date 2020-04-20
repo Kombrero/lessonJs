@@ -7,9 +7,9 @@ let money ,
 const isNumber = (n)=>{
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
-let expensesItems = document.querySelectorAll('.expenses-items');
+const expensesItems = document.querySelectorAll('.expenses-items');
 
-let button1 = document.getElementById('start'),
+const button1 = document.getElementById('start'),
     button2 = document.getElementById('cancel'),
     incomeAdd = document.getElementsByTagName('button')[0],
     expensesAdd = document.getElementsByTagName('button')[1],
