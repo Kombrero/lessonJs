@@ -33,8 +33,10 @@ const button1 = document.getElementById('start'),
     rangePeriodSelect = document.querySelector('.period-select'),
     incomeItems = document.querySelectorAll('.income-items'),
     periodAmount = document.querySelector('.period-amount'),
-    allInput = document.querySelectorAll('input[type=text]');
-    
+    allInput = document.querySelectorAll('input[type=text]'),
+    depositBank = document.querySelector('.deposit-bank'),
+    depositAmount = document.querySelector('.deposit-amount'),
+    depositPercent = document.querySelector('.deposit-percent');
 
     class AppData {
         constructor() {
@@ -65,8 +67,8 @@ const button1 = document.getElementById('start'),
         this.getAddExpenses();
         this.getAddIncome();
         this.getPeriodAmount();
+        this.getInfoDeposit();
         this.getBudget();
-        
 
         this.showResult(); 
     };
@@ -178,7 +180,8 @@ const button1 = document.getElementById('start'),
     };
 
     AppData.prototype.getBudget = function (){
-        this.budgetMonth = +this.budget + this.incomeMonth - this.expensesMonth;
+        const moneyDeposit = this.moneyDeposit * (this.percentDeposit / 100);
+        this.budgetMonth = +this.budget + this.incomeMonth - this.expensesMonth + moneyDeposit;
         const budgetDay = Math.ceil(this.budgetMonth/30);
         this.budgetDay = budgetDay;
         console.log(this.budgetMonth);
@@ -222,6 +225,7 @@ const button1 = document.getElementById('start'),
             button1.style.display = 'none';
             button2.style.display = 'block';  
         } 
+        
        };
 
        AppData.prototype.getR = function(){
@@ -262,6 +266,9 @@ const button1 = document.getElementById('start'),
         this.expensesMonth = [], 
         this.budgetMonth = 0,
         appData.getR(),
+        checkBox.checked = false,
+        depositBank.style.display = 'none',
+        depositAmount.style.display = 'none',
         expensesAdd.style.display = 'block',
         incomeAdd.style.display = '';
 
@@ -280,8 +287,53 @@ const button1 = document.getElementById('start'),
         expensesAdd.addEventListener('click', this.addExpensesBlock),
         incomeAdd.addEventListener('click', this.addIncomeBlock),
         
-        button2.addEventListener('click', this.getReset);
-        ;
+        button2.addEventListener('click', this.getReset),
+        
+        checkBox.addEventListener('change', this.depositHandler.bind(this)),
+        depositPercent.addEventListener('change',  function () {
+            if (!isNumber(depositPercent.value) || depositPercent.value < 0 || depositPercent.value > 100  ) {
+                alert ('Введите корректное число');
+                depositPercent.value = '';
+         }
+        });
+
+    };
+
+    AppData.prototype.getInfoDeposit = function(){
+        if (this.deposit) {
+            this.percentDeposit = depositPercent.value;
+            this.moneyDeposit = depositAmount.value;
+        }
+    };
+
+    AppData.prototype.changePercent = function() {
+        const valueSelect = this.value;
+        if (valueSelect === 'other'){
+            depositPercent.style.display = 'inline-block';
+            depositPercent.value = '';
+            depositPercent.value = depositPercent.value;
+            console.log(depositPercent.value);
+        }else{
+            depositPercent.style.display = 'none';
+            depositPercent.value = valueSelect;
+        }
+    };
+    console.log(depositPercent.value);
+
+    AppData.prototype.depositHandler = function() {
+        if(checkBox.checked) {
+            depositBank.style.display = 'inline-block';
+            depositAmount.style.display = 'inline-block';
+            this.deposit = true;
+            depositBank.addEventListener('change', this.changePercent);
+        }else{
+            depositBank.style.display = 'none';
+            depositAmount.style.display = 'none';
+            depositBank.value ='';
+            depositAmount.value ='';
+            this.deposit = false;
+            depositBank.removeEventListener('change', this.changePercent);
+        }
     };
 
     
